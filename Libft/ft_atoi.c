@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkurukay <tkurukay@student.42.ft>          +#+  +:+       +#+        */
+/*   By: tkurukay <tkurukay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:10:38 by tkurukay          #+#    #+#             */
-/*   Updated: 2024/02/16 12:50:49 by tkurukay         ###   ########.fr       */
+/*   Updated: 2024/06/15 22:12:29 by tkurukay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str, int base)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sing;
@@ -29,23 +29,11 @@ int	ft_atoi(const char *str, int base)
 		}
 		i++;
 	}
-	while ((str[i] >= '0' && str[i] <= '9') || (str[i] >= 'A' && str[i] <= 'F') || (str[i] >= 'a' && str[i] <= 'f'))
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = result * base;
-		if (base <= 10)
-		{
-			result += str[i] - '0';
-		}
-		else if (base > 10 && str[i] >= 'A' && str[i] <= 'F')
-		{
-			result += str[i] - 'A' + 10;
-		}
-		else if (base > 10 && str[i] >= 'a' && str[i] <= 'f')
-		{
-			result += str[i] - 'a' + 10;
-		}
-		
-		
+		result = result * 10;
+		result += str[i] - '0';
 		i++;
 	}
 	return (result * sing);
+}

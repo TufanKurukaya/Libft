@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkurukay <tkurukay@student.42.ft>          +#+  +:+       +#+        */
+/*   By: tkurukay <tkurukay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:28:24 by tkurukay          #+#    #+#             */
-/*   Updated: 2023/12/24 13:37:11 by tkurukay         ###   ########.fr       */
+/*   Updated: 2024/06/15 22:21:59 by tkurukay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stdlib.h>
 
 int		ft_isalnum(int c);

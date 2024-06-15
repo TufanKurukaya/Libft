@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkurukay <tkurukay@student.42.ft>          +#+  +:+       +#+        */
+/*   By: tkurukay <tkurukay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 17:49:29 by tkurukay          #+#    #+#             */
-/*   Updated: 2023/12/26 15:19:31 by tkurukay         ###   ########.fr       */
+/*   Updated: 2024/06/15 22:13:59 by tkurukay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_bzero(void *s, size_t n)
 {

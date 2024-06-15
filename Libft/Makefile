@@ -3,17 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tkurukay <tkurukay@student.42.ft>          +#+  +:+       +#+         #
+#    By: tkurukay <tkurukay@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/13 18:45:47 by beeren            #+#    #+#              #
-#    Updated: 2023/12/26 13:13:45 by tkurukay         ###   ########.fr        #
+#    Updated: 2024/06/15 22:28:52 by tkurukay         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libft.a
+
 CC = cc
+
 CFLAGS = -Wall -Wextra -Werror
+
 SRC = ft_atoi.c	\
 ft_bzero.c		\
 ft_isalnum.c	\
@@ -49,14 +52,22 @@ ft_strlcat.c	\
 ft_striteri.c	\
 ft_strmapi.c
 
-OBJ = $(SRC:.c=.o)
+OBJ_DIR = .objs
+
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
 all:	$(NAME)
 
+
+$(OBJ_DIR)/%.o : %.c
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
 $(NAME):	$(OBJ)
 	ar rcs $(NAME) $(OBJ)
+
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ_DIR)
 fclean:	clean
 	rm -f $(NAME)
 re:	fclean $(NAME)
